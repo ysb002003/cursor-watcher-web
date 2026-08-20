@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ysb002003.github.io/cursor-watcher-web/sitemap.xml

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cursor Watcher — 多 Cursor Agent 统一管理 | Multi-Agent Manager for Cursor</title>
+  <meta name="description" content="Cursor Watcher 是 Windows 桌面工具，统一监控多个 Cursor IDE / Agent：实时状态、一键发指令、任务完成通知、用量看板。下载安装即可开始管理你的多 Agent 工作流。" />
+  <meta name="keywords" content="Cursor Watcher,Cursor Agent,多 Agent 管理,Cursor IDE 监控,AI coding agent,Windows 桌面工具,任务通知" />
+  <meta name="author" content="Cursor Watcher" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#4f46e5" />
+  <link rel="canonical" href="https://ysb002003.github.io/cursor-watcher-web/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://ysb002003.github.io/cursor-watcher-web/" />
+  <link rel="alternate" hreflang="en" href="https://ysb002003.github.io/cursor-watcher-web/?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://ysb002003.github.io/cursor-watcher-web/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Cursor Watcher" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:url" content="https://ysb002003.github.io/cursor-watcher-web/" />
+  <meta property="og:title" content="Cursor Watcher — 多 Cursor Agent 统一管理" />
+  <meta property="og:description" content="在一个窗口里监控多个 Cursor Agent：状态、指令、通知与用量，专为并行 AI 编程打造。" />
+  <meta property="og:image" content="https://ysb002003.github.io/cursor-watcher-web/images/dashboard.png" />
+  <meta property="og:image:alt" content="Cursor Watcher 仪表盘截图" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cursor Watcher — Multi-Agent Manager for Cursor" />
+  <meta name="twitter:description" content="Monitor multiple Cursor Agents in one Windows app: status, commands, notifications, and usage." />
+  <meta name="twitter:image" content="https://ysb002003.github.io/cursor-watcher-web/images/dashboard.png" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Cpath d='M18 34c6-12 22-12 28 0' stroke='%23fff' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='40' r='5' fill='%23a5b4fc'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Noto+Sans+SC:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Cursor Watcher",
+        "alternateName": ["Cursor Agent Manager", "Cursor Watcher Agent Manager"],
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "description": "Windows desktop app that monitors and controls multiple Cursor IDE / Agent instances: live status, command sending, Windows notifications, task history, and usage overview.",
+        "url": "https://ysb002003.github.io/cursor-watcher-web/",
+        "downloadUrl": "https://github.com/ysb002003/cursor-watcher-web/releases/latest",
+        "image": "https://ysb002003.github.io/cursor-watcher-web/images/dashboard.png",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        "featureList": [
+          "Discover and monitor multiple Cursor instances",
+          "Agent status: working, awaiting confirmation, completed",
+          "Send commands to a selected Cursor Agent",
+          "Windows toast notifications on task completion",
+          "Floating overlay for in-progress chats",
+          "Cursor usage overview",
+          "Built-in tools shortcuts",
+          "Chinese and English UI"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "name": "Cursor Watcher",
+        "url": "https://ysb002003.github.io/cursor-watcher-web/",
+        "inLanguage": ["zh-CN", "en"],
+        "publisher": {
+          "@type": "Organization",
+          "name": "Cursor Watcher",
+          "url": "https://github.com/ysb002003/cursor-watcher-web"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Cursor Watcher?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cursor Watcher is a Windows desktop application that helps you monitor and manage multiple Cursor IDE / Agent windows from one place—status, commands, notifications, and usage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who is Cursor Watcher for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Developers who run several Cursor Agents in parallel across projects and need a single control surface instead of switching windows constantly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What platforms are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Windows 10 and Windows 11. Cursor Watcher is a native WPF desktop app for Windows."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where do I download updates?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Download the latest release from the public GitHub Releases page: https://github.com/ysb002003/cursor-watcher-web/releases/latest"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">跳到主要内容</a>
+
+  <div class="bg-atmosphere" aria-hidden="true">
+    <div class="bg-orb bg-orb--a"></div>
+    <div class="bg-orb bg-orb--b"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Cursor Watcher">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <strong>Cursor Watcher</strong>
+          <span data-i18n="brandTag">Agent Manager</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#features" data-i18n="navFeatures">功能</a>
+        <a href="#gallery" data-i18n="navGallery">界面</a>
+        <a href="#how" data-i18n="navHow">用法</a>
+        <a href="#faq" data-i18n="navFaq">常见问题</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-btn is-active" data-lang="zh" aria-pressed="true">中文</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn-primary btn-sm" href="https://github.com/ysb002003/cursor-watcher-web/releases/latest" rel="noopener" data-i18n="navDownload">下载</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="shell hero-copy">
+        <p class="eyebrow" data-i18n="heroEyebrow">Windows · Cursor IDE · Multi-Agent</p>
+        <h1 class="hero-brand">Cursor Watcher</h1>
+        <p class="hero-lead" data-i18n="heroLead">同时跑多个 Cursor Agent？在一个窗口里看状态、发指令、收通知。</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://github.com/ysb002003/cursor-watcher-web/releases/latest" rel="noopener" data-i18n="ctaDownload">下载最新版</a>
+          <a class="btn btn-ghost" href="#features" data-i18n="ctaExplore">了解功能</a>
+        </div>
+        <ul class="hero-meta" data-i18n-list="heroMeta">
+          <li>Windows 10 / 11</li>
+          <li>中英界面</li>
+          <li>GitHub Releases 更新</li>
+        </ul>
+      </div>
+      <div class="hero-visual">
+        <img
+          class="hero-shot"
+          src="./images/dashboard.png"
+          width="1440"
+          height="900"
+          alt="Cursor Watcher 仪表盘：多个 Agent 卡片与状态筛选"
+          data-i18n-alt="altDashboard"
+          fetchpriority="high"
+        />
+      </div>
+    </section>
+
+    <section class="section section-features" id="features">
+      <div class="shell">
+        <header class="section-head">
+          <h2 data-i18n="featuresTitle">为并行 Agent 工作流设计</h2>
+          <p data-i18n="featuresSub">发现实例、看清状态、直接发命令——少切窗口，多做决策。</p>
+        </header>
+        <div class="feature-grid">
+          <article class="feature">
+            <h3 data-i18n="f1Title">多实例监控</h3>
+            <p data-i18n="f1Body">自动发现正在运行的 Cursor，按项目展示 Agent 状态：工作中、等待确认、已完成。</p>
+          </article>
+          <article class="feature">
+            <h3 data-i18n="f2Title">一键发指令</h3>
+            <p data-i18n="f2Body">选中 Agent 后，在命令面板直接发送下一条任务，无需来回切换 Cursor 窗口。</p>
+          </article>
+          <article class="feature">
+            <h3 data-i18n="f3Title">完成即通知</h3>
+            <p data-i18n="f3Body">任务结束弹出 Windows 通知，后台跑 Agent 时也能及时回看结果。</p>
+          </article>
+          <article class="feature">
+            <h3 data-i18n="f4Title">进行中浮窗</h3>
+            <p data-i18n="f4Body">浮层汇总进行中的对话，便于跨项目盯进度。</p>
+          </article>
+          <article class="feature">
+            <h3 data-i18n="f5Title">用量一览</h3>
+            <p data-i18n="f5Body">仪表盘展示 Cursor 用量概览，并行工作时心里有数。</p>
+          </article>
+          <article class="feature">
+            <h3 data-i18n="f6Title">工具快捷入口</h3>
+            <p data-i18n="f6Body">常用在线工具与业务系统集中打开，减少书签跳跃。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-gallery" id="gallery">
+      <div class="shell">
+        <header class="section-head">
+          <h2 data-i18n="galleryTitle">真实界面</h2>
+          <p data-i18n="gallerySub">仪表盘、命令面板与工具页——工作流一屏可见。</p>
+        </header>
+        <figure class="shot-block">
+          <img src="./images/command.png" width="1440" height="900" loading="lazy" alt="命令面板：向选中的 Cursor Agent 发送指令" data-i18n-alt="altCommand" />
+          <figcaption data-i18n="capCommand">命令面板：选中 Agent 后直接下发任务</figcaption>
+        </figure>
+        <figure class="shot-block shot-block--alt">
+          <img src="./images/tools.png" width="1440" height="900" loading="lazy" alt="工具页：常用在线工具与业务系统入口" data-i18n-alt="altTools" />
+          <figcaption data-i18n="capTools">工具页：常用工具与业务系统一键打开</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-how" id="how">
+      <div class="shell">
+        <header class="section-head">
+          <h2 data-i18n="howTitle">三步开始</h2>
+          <p data-i18n="howSub">安装后即可监控本机已打开的 Cursor。</p>
+        </header>
+        <ol class="steps">
+          <li>
+            <span class="step-num">1</span>
+            <div>
+              <h3 data-i18n="s1Title">下载安装</h3>
+              <p data-i18n="s1Body">从 GitHub Releases 获取最新 Windows 安装包或可执行文件。</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <div>
+              <h3 data-i18n="s2Title">打开 Cursor</h3>
+              <p data-i18n="s2Body">照常启动一个或多个 Cursor 项目；Watcher 会自动发现实例。</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <div>
+              <h3 data-i18n="s3Title">统一指挥</h3>
+              <p data-i18n="s3Body">在仪表盘筛选状态、选择 Agent、发送命令，并用通知跟踪完成情况。</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-download" id="download">
+      <div class="shell download-panel">
+        <div>
+          <h2 data-i18n="dlTitle">获取 Cursor Watcher</h2>
+          <p data-i18n="dlSub">公开发布与更新检查均通过本仓库 Releases 提供。</p>
+        </div>
+        <div class="download-actions">
+          <a class="btn btn-primary" href="https://github.com/ysb002003/cursor-watcher-web/releases/latest" rel="noopener" data-i18n="ctaDownload">下载最新版</a>
+          <a class="btn btn-ghost" href="https://github.com/ysb002003/cursor-watcher-web" rel="noopener" data-i18n="ctaRepo">查看仓库</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-faq" id="faq">
+      <div class="shell">
+        <header class="section-head">
+          <h2 data-i18n="faqTitle">常见问题</h2>
+          <p data-i18n="faqSub">给搜索引擎与 AI 助手的清晰事实说明。</p>
+        </header>
+        <div class="faq-list">
+          <details open>
+            <summary data-i18n="q1">Cursor Watcher 是什么？</summary>
+            <p data-i18n="a1">Windows 桌面工具，用于统一查看与控制多个 Cursor IDE / Agent 实例：状态监控、发送指令、完成通知与用量概览。</p>
+          </details>
+          <details>
+            <summary data-i18n="q2">适合谁用？</summary>
+            <p data-i18n="a2">需要同时跑多个 Cursor Agent、不想在多个窗口间来回切换的开发者。</p>
+          </details>
+          <details>
+            <summary data-i18n="q3">支持哪些系统？</summary>
+            <p data-i18n="a3">Windows 10 / Windows 11。应用基于 .NET / WPF。</p>
+          </details>
+          <details>
+            <summary data-i18n="q4">如何下载与更新？</summary>
+            <p data-i18n="a4">请访问 GitHub Releases 最新版页面。应用也可通过该公开仓库检查更新。</p>
+          </details>
+          <details>
+            <summary data-i18n="q5">源代码仓库是公开的吗？</summary>
+            <p data-i18n="a5">本站与发布包托管在公开仓库 cursor-watcher-web。产品源代码仓库可保持私有。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div class="footer-brand">
+        <strong>Cursor Watcher</strong>
+        <span data-i18n="footerTag">Multi-Agent Manager for Cursor IDE</span>
+      </div>
+      <p class="footer-note" data-i18n="footerNote">Cursor 是 Anysphere 的产品；Cursor Watcher 为独立第三方桌面工具。</p>
+      <p class="footer-copy">© <span id="year"></span> Cursor Watcher</p>
+    </div>
+  </footer>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
