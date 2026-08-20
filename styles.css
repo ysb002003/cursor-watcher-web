@@ -246,7 +246,6 @@ a {
 
 .hero {
   position: relative;
-  min-height: min(100vh, 960px);
   display: grid;
   align-content: start;
   padding: 3.5rem 0 0;
@@ -315,12 +314,14 @@ a {
 }
 
 .hero-visual {
-  margin-top: 2.75rem;
+  width: min(780px, var(--shell));
+  margin: 2rem auto 0;
   animation: rise 1s 0.15s ease both;
 }
 
 .hero-shot {
   width: 100%;
+  height: auto;
   border-radius: var(--radius) var(--radius) 0 0;
   box-shadow: var(--shadow);
   border: 1px solid rgba(255, 255, 255, 0.55);
