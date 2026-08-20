@@ -29,7 +29,8 @@
   <meta name="twitter:description" content="Monitor multiple Cursor Agents in one Windows app: status, commands, notifications, and usage." />
   <meta name="twitter:image" content="https://ysb002003.github.io/cursor-watcher-web/images/dashboard.png" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Cpath d='M18 34c6-12 22-12 28 0' stroke='%23fff' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='40' r='5' fill='%23a5b4fc'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/png" href="./images/logo.png" />
+  <link rel="apple-touch-icon" href="./images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Noto+Sans+SC:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -73,8 +74,9 @@
         "inLanguage": ["zh-CN", "en"],
         "publisher": {
           "@type": "Organization",
-          "name": "Cursor Watcher",
-          "url": "https://github.com/ysb002003/cursor-watcher-web"
+          "name": "ComTools",
+          "url": "https://comtools.cn",
+          "logo": "https://ysb002003.github.io/cursor-watcher-web/images/logo.png"
         }
       },
       {
@@ -130,7 +132,7 @@
   <header class="site-header">
     <div class="shell header-inner">
       <a class="brand" href="#top" aria-label="Cursor Watcher">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <img class="brand-logo" src="./images/logo.png" width="72" height="72" alt="Cursor Watcher" />
         <span class="brand-text">
           <strong>Cursor Watcher</strong>
           <span data-i18n="brandTag">Agent Manager</span>
@@ -139,6 +141,7 @@
       <nav class="nav" aria-label="Primary">
         <a href="#features" data-i18n="navFeatures">功能</a>
         <a href="#gallery" data-i18n="navGallery">界面</a>
+        <a href="#ecosystem" data-i18n="navEcosystem">生态</a>
         <a href="#how" data-i18n="navHow">用法</a>
         <a href="#faq" data-i18n="navFaq">常见问题</a>
       </nav>
@@ -233,6 +236,60 @@
       </div>
     </section>
 
+    <section class="section section-ecosystem" id="ecosystem">
+      <div class="shell">
+        <header class="section-head">
+          <h2 data-i18n="ecoTitle">ComTools 主站与工具</h2>
+          <p data-i18n="ecoSub">Cursor Watcher 由 ComTools 出品。访问总站，或直接打开常用工具与业务系统。</p>
+        </header>
+
+        <a class="site-link" href="https://comtools.cn" target="_blank" rel="noopener noreferrer">
+          <img class="site-link-logo" src="./images/logo.png" width="48" height="48" alt="" aria-hidden="true" />
+          <span>
+            <strong data-i18n="ecoMainTitle">ComTools 总站</strong>
+            <span class="site-link-url">comtools.cn</span>
+            <span class="site-link-desc" data-i18n="ecoMainDesc">打开主站，浏览全部在线工具与产品入口。</span>
+          </span>
+          <span class="site-link-cta" data-i18n="ecoOpen">访问</span>
+        </a>
+
+        <div class="tool-links" role="list">
+          <a role="listitem" href="https://comtools.cn/json-formatter" target="_blank" rel="noopener noreferrer">
+            <strong data-i18n="toolJson">JSON工具</strong>
+            <span>comtools.cn/json-formatter</span>
+          </a>
+          <a role="listitem" href="https://comtools.cn/excel-to-sql" target="_blank" rel="noopener noreferrer">
+            <strong data-i18n="toolExcel">Excel工具</strong>
+            <span>comtools.cn/excel-to-sql</span>
+          </a>
+          <a role="listitem" href="https://smartsql.comtools.cn/" target="_blank" rel="noopener noreferrer">
+            <strong data-i18n="toolSsms">SSMS工具</strong>
+            <span>smartsql.comtools.cn</span>
+          </a>
+          <a role="listitem" href="https://comtools.cn/pdf-merge" target="_blank" rel="noopener noreferrer">
+            <strong data-i18n="toolPdf">PDF工具</strong>
+            <span>comtools.cn/pdf-merge</span>
+          </a>
+          <a role="listitem" href="https://comtools.cn/url-params" target="_blank" rel="noopener noreferrer">
+            <strong data-i18n="toolDev">开发工具</strong>
+            <span>comtools.cn/url-params</span>
+          </a>
+          <a role="listitem" href="https://chromewebstore.google.com/detail/web-table-to-excel-sql/cnnbcnlgapdikanhgclfmfhmeeolnmgj?authuser=0&hl=zh-CN" target="_blank" rel="noopener noreferrer">
+            <strong data-i18n="toolChrome">Chrome表格插件</strong>
+            <span>Chrome Web Store</span>
+          </a>
+          <a role="listitem" href="https://quote.comtools.cn/" target="_blank" rel="noopener noreferrer">
+            <strong data-i18n="toolQuote">报价系统</strong>
+            <span>quote.comtools.cn</span>
+          </a>
+          <a role="listitem" href="https://tradedocs.comtools.cn/" target="_blank" rel="noopener noreferrer">
+            <strong data-i18n="toolTrade">外贸单证系统</strong>
+            <span>tradedocs.comtools.cn</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-how" id="how">
       <div class="shell">
         <header class="section-head">
@@ -313,11 +370,19 @@
   <footer class="site-footer">
     <div class="shell footer-inner">
       <div class="footer-brand">
-        <strong>Cursor Watcher</strong>
-        <span data-i18n="footerTag">Multi-Agent Manager for Cursor IDE</span>
+        <img class="footer-logo" src="./images/logo.png" width="40" height="40" alt="" aria-hidden="true" />
+        <div>
+          <strong>Cursor Watcher</strong>
+          <span data-i18n="footerTag">Multi-Agent Manager for Cursor IDE</span>
+        </div>
       </div>
-      <p class="footer-note" data-i18n="footerNote">Cursor 是 Anysphere 的产品；Cursor Watcher 为独立第三方桌面工具。</p>
-      <p class="footer-copy">© <span id="year"></span> Cursor Watcher</p>
+      <nav class="footer-links" aria-label="ComTools">
+        <a href="https://comtools.cn" target="_blank" rel="noopener noreferrer" data-i18n="footerSite">ComTools 总站</a>
+        <a href="#ecosystem" data-i18n="footerTools">工具入口</a>
+        <a href="https://github.com/ysb002003/cursor-watcher-web/releases/latest" rel="noopener" data-i18n="navDownload">下载</a>
+      </nav>
+      <p class="footer-note" data-i18n="footerNote">Cursor Watcher 由 ComTools 出品。Cursor 是 Anysphere 的产品；本工具为独立第三方桌面软件。</p>
+      <p class="footer-copy">© <span id="year"></span> ComTools / Cursor Watcher</p>
     </div>
   </footer>
 

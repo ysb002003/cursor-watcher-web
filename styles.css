@@ -132,6 +132,14 @@ a {
   gap: 0.75rem;
 }
 
+.brand-logo {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 0.7rem;
+  object-fit: cover;
+  box-shadow: 0 8px 20px var(--glow);
+}
+
 .brand-mark {
   width: 2.25rem;
   height: 2.25rem;
@@ -391,6 +399,98 @@ a {
   margin-bottom: 0;
 }
 
+.section-ecosystem {
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.site-link {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.25rem 1.35rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.72);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.site-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 16px 40px rgba(49, 46, 129, 0.12);
+}
+
+.site-link-logo {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.85rem;
+}
+
+.site-link strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.site-link-url {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.site-link-desc {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.site-link-cta {
+  align-self: center;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  color: var(--white);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.tool-links {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 1fr;
+}
+
+.tool-links a {
+  display: grid;
+  gap: 0.2rem;
+  padding: 1rem 1.1rem;
+  border-top: 1px solid var(--line);
+  transition: color 0.15s ease, padding-left 0.15s ease;
+}
+
+.tool-links a:hover {
+  color: var(--accent);
+  padding-left: 0.35rem;
+}
+
+.tool-links strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.tool-links span {
+  color: var(--muted);
+  font-size: 0.88rem;
+  word-break: break-all;
+}
+
 .steps {
   list-style: none;
   margin: 0;
@@ -522,8 +622,32 @@ a {
 
 .footer-brand {
   display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-brand > div {
+  display: flex;
   flex-direction: column;
   gap: 0.2rem;
+}
+
+.footer-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.7rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
 }
 
 .footer-brand strong {
@@ -561,6 +685,17 @@ a {
   }
 }
 
+@media (max-width: 640px) {
+  .site-link {
+    grid-template-columns: auto 1fr;
+  }
+
+  .site-link-cta {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}
+
 @media (min-width: 760px) {
   .nav {
     display: flex;
@@ -569,6 +704,11 @@ a {
   .feature-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 0 2rem;
+  }
+
+  .tool-links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.25rem 1.5rem;
   }
 
   .download-panel {
@@ -584,6 +724,10 @@ a {
 
   .feature-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tool-links {
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .steps {
