@@ -314,7 +314,7 @@ a {
 }
 
 .hero-visual {
-  width: min(780px, var(--shell));
+  width: min(1080px, var(--shell));
   margin: 2rem auto 0;
   animation: rise 1s 0.15s ease both;
 }
